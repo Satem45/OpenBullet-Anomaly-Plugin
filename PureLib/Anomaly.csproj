@@ -4,4 +4,17 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="PluginFramework">
+      <HintPath>..\..\..\..\Desktop\Tools\Release\bin\PluginFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="RuriLib">
+      <HintPath>..\..\..\..\Desktop\Tools\Release\bin\RuriLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
