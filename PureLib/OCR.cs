@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Anomaly
+﻿namespace Anomaly
 {
-    class OCR
+    internal class OCR
     {
     }
 }
