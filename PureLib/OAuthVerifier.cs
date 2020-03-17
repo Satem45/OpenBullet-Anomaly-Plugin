@@ -27,12 +27,12 @@ namespace OpenBulletPlugin
     public class BlockSum : BlockBase, IBlockPlugin
     {
         // The default label of the block when it's added
-        public string Name => "OAuthGenerator";
+        public string Name => "OAuthVerifier";
 
         /* The color of the block. This must contain a string with one of the following color names
          * http://www.flounder.com/csharp_color_table.htm
          */
-        public string Color => "Cyan";
+        public string Color => "Aqua";
 
         /*
          * If this is true, the label of the block will be displayed with a light font instead of a dark one.
