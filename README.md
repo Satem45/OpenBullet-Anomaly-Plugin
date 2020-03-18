@@ -14,5 +14,9 @@ In Progress
 1) Porting Functions
 2) Updater
 
+Completed
+1) OAuth Generation Blocks
+2) Base of Updater
+
 Do you want to add to this project? Just submit a Pull-Request for review.
 Want a Feature Added? Just open an Issue with the enhancement label.
