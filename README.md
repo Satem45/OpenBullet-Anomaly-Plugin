@@ -15,4 +15,4 @@ In Progress
 2) Updater
 
 Do you want to add to this project? Just submit a Pull-Request for review.
-Want an Feature Added? Just open an Issue with the enhancement label.
+Want a Feature Added? Just open an Issue with the enhancement label.
