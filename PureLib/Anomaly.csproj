@@ -5,10 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="DiscordRichPresence" Version="1.0.150" />
     <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.6.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Extreme.Net">
+      <HintPath>..\..\..\..\Desktop\Tools\Release\bin\Extreme.Net.dll</HintPath>
+    </Reference>
     <Reference Include="PluginFramework">
       <HintPath>..\..\..\..\Desktop\Tools\Release\bin\PluginFramework.dll</HintPath>
     </Reference>
