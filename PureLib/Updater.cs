@@ -37,6 +37,7 @@ namespace Anomaly
             }
         }
 
+        //This class grabs the Json response Anomaly needs from Github. This is the Version Number it saves.
         public partial class GHApi
         {
             [JsonProperty("tag_name")]
@@ -61,7 +62,7 @@ namespace Anomaly
                 //This will get the latest Release DLL From Github
                 var client2 = new System.Net.WebClient();
                 //This will save with the extension
-                client2.DownloadFile("https://github.com/PurityWasHere/OpenBullet-Anomaly-Plugin/releases/latest/download/Anomaly.dll", $"Anomaly{ParseAPI.TagName.Trim()}.dll");
+                client2.DownloadFile("https://github.com/PurityWasHere/OpenBullet-Anomaly-Plugin/releases/latest/download/Anomaly.dll", $@".\Plugins\Anomaly-{ParseAPI.TagName.Trim()}.dll");
                 app.Logger.Log("Successfully Updated.", LogLevel.Info, true);
             }
             catch (Exception ex) { app.Logger.Log($"Error Collecting ID Or Saving. ex:{ex}", LogLevel.Error, true); }
