@@ -2,7 +2,6 @@
 using PluginFramework.Attributes;
 using RuriLib;
 using RuriLib.Interfaces;
-using Extreme.Net;
 using System.Net.Http;
 
 namespace Anomaly
@@ -11,6 +10,7 @@ namespace Anomaly
     {
         public string Name => "Anomaly Updater";
         public string UpdateStatus { get; set; } = "...";
+
         [Button("Check For Update")]
         public async System.Threading.Tasks.Task ExecuteAsync(IApplication app)
         {
@@ -35,7 +35,8 @@ namespace Anomaly
                 app.Logger.Log("Error Checking For Update.", LogLevel.Info, true);
             }
         }
+
         [TextMulti("Changelog", "Full of Yummies")]
-        public string[] Interests { get; set; } = new string[] {  };
+        public string[] Interests { get; set; } = new string[] { };
     }
 }

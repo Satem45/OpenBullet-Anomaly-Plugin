@@ -12,15 +12,18 @@ namespace OpenBulletPlugin
         public string Name => "OAuthVerifier";
         public string Color => "Aqua";
         public bool LightForeground => false;
+
         [Text("Variable Name", "The output variable name")]
         public string VariableName { get; set; } = "";
 
         [Checkbox("Is Capture", "Should the output variable be marked as capture?")]
         public bool IsCapture { get; set; } = false;
+
         public Verifier()
         {
             Label = Name;
         }
+
         public override BlockBase FromLS(string line)
         {
             var input = line.Trim();
@@ -39,6 +42,7 @@ namespace OpenBulletPlugin
             catch { throw new ArgumentException("Variable name not specified"); }
             return this;
         }
+
         public override string ToLS(bool indent = true)
         {
             var writer = new BlockWriter(GetType(), indent, Disabled)
@@ -53,6 +57,7 @@ namespace OpenBulletPlugin
             }
             return writer.ToString();
         }
+
         public override void Process(BotData data)
         {
             base.Process(data);
