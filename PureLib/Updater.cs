@@ -37,6 +37,5 @@ namespace Anomaly
         }
         [TextMulti("Changelog", "Full of Yummies")]
         public string[] Interests { get; set; } = new string[] {  };
-    };
     }
 }
