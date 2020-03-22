@@ -67,6 +67,7 @@ namespace OpenBulletPlugin
 
         public override void Process(BotData data)
         {
+            // Magick Stuff goin on
             var Input = (ReplaceValues(VerInput, data));
             byte[] bytes = Encoding.UTF8.GetBytes(Input);
             SHA256Managed hashstring = new SHA256Managed();
