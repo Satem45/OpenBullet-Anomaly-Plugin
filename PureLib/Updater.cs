@@ -17,6 +17,7 @@ namespace Anomaly
         public async System.Threading.Tasks.Task CheckUpdate(IApplication app)
         {
             string VersionURL = "https://raw.githubusercontent.com/PurityWasHere/OpenBullet-Anomaly-Plugin/master/VersionNumber.txt";
+            string ChangelogURL = "https://raw.githubusercontent.com/PurityWasHere/OpenBullet-Anomaly-Plugin/master/Changelog.txt";
             string LocalVersion = "0.01"; //LocalVersion Number.
             HttpClient client = new HttpClient();
             using (HttpResponseMessage response = await client.GetAsync(VersionURL))
@@ -34,6 +35,12 @@ namespace Anomaly
                     }
                 }
                 catch (Exception ex) { app.Logger.Log($"Error in Update Check. Ex:{ex}", LogLevel.Error, true); }
+            }
+            using (HttpResponseMessage response = await client.GetAsync(ChangelogURL))
+            {
+                var Changelog = await response.Content.ReadAsStringAsync();
+                ChangeLog = Changelog;
+                app.Logger.Log(ChangeLog, LogLevel.Info, true);
             }
         }
 
@@ -67,5 +74,8 @@ namespace Anomaly
             }
             catch (Exception ex) { app.Logger.Log($"Error Collecting ID Or Saving. ex:{ex}", LogLevel.Error, true); }
         }
+
+        [Text("Changelog")]
+        public string ChangeLog { get; set; } = "";
     }
 }

@@ -5,6 +5,7 @@ C:\Users\codys\source\repos\PureLib\PureLib\bin\Release\netstandard2.0\Microsoft
 C:\Users\codys\source\repos\PureLib\PureLib\bin\Release\netstandard2.0\PluginFramework.dll
 C:\Users\codys\source\repos\PureLib\PureLib\bin\Release\netstandard2.0\RuriLib.dll
 C:\Users\codys\source\repos\PureLib\PureLib\bin\Release\netstandard2.0\Extreme.Net.dll
+C:\Users\codys\source\repos\PureLib\PureLib\obj\Release\netstandard2.0\Anomaly.csprojAssemblyReference.cache
 C:\Users\codys\source\repos\PureLib\PureLib\obj\Release\netstandard2.0\Anomaly.AssemblyInfoInputs.cache
 C:\Users\codys\source\repos\PureLib\PureLib\obj\Release\netstandard2.0\Anomaly.AssemblyInfo.cs
 C:\Users\codys\source\repos\PureLib\PureLib\obj\Release\netstandard2.0\Anomaly.csproj.CopyComplete
