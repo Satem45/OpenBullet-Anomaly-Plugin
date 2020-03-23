@@ -5,6 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="MegaApiClient">
+      <HintPath>..\References\MegaApiClient.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.IdentityModel.Tokens">
       <HintPath>..\References\Microsoft.IdentityModel.Tokens.dll</HintPath>
     </Reference>

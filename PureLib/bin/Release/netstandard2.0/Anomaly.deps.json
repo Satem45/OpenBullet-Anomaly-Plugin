@@ -11,6 +11,7 @@
         "dependencies": {
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "NETStandard.Library": "2.0.3",
+          "MegaApiClient": "1.0.0.0",
           "Microsoft.IdentityModel.Tokens": "5.6.0.0",
           "PluginFramework": "1.0.0.0",
           "RuriLib": "1.0.0.0"
@@ -633,6 +634,14 @@
           }
         }
       },
+      "MegaApiClient/1.0.0.0": {
+        "runtime": {
+          "MegaApiClient.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Microsoft.IdentityModel.Tokens/5.6.0.0": {
         "runtime": {
           "Microsoft.IdentityModel.Tokens.dll": {
@@ -1008,6 +1017,11 @@
       "sha512": "sha512-lJ8AxvkX7GQxpC6GFCeBj8ThYVyQczx2+f/cWHJU8tjS7YfI6Cv6bon70jVEgs2CiFbmmM8b9j1oZVx0dSI2Ww==",
       "path": "system.xml.xmldocument/4.3.0",
       "hashPath": "system.xml.xmldocument.4.3.0.nupkg.sha512"
+    },
+    "MegaApiClient/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     },
     "Microsoft.IdentityModel.Tokens/5.6.0.0": {
       "type": "reference",

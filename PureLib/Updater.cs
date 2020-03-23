@@ -5,6 +5,7 @@ using RuriLib;
 using RuriLib.Interfaces;
 using System;
 using System.Net.Http;
+using Anomaly;
 
 namespace Anomaly
 {
@@ -16,9 +17,9 @@ namespace Anomaly
         [Button("Check For Update")]
         public async System.Threading.Tasks.Task CheckUpdate(IApplication app)
         {
-            string VersionURL = "https://raw.githubusercontent.com/PurityWasHere/OpenBullet-Anomaly-Plugin/master/VersionNumber.txt";
-            string ChangelogURL = "https://raw.githubusercontent.com/PurityWasHere/OpenBullet-Anomaly-Plugin/master/Changelog.txt";
-            string LocalVersion = "0.01"; //LocalVersion Number.
+            string VersionURL = Anomaly.Globals.VersionURL;
+            string ChangelogURL = Anomaly.Globals.ChangelogURL;
+            string LocalVersion = Anomaly.Globals.VersionNumber;
             HttpClient client = new HttpClient();
             using (HttpResponseMessage response = await client.GetAsync(VersionURL))
             {
