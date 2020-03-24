@@ -5,7 +5,6 @@ using RuriLib;
 using RuriLib.Interfaces;
 using System;
 using System.Net.Http;
-using System.IO;
 
 namespace Anomaly
 {

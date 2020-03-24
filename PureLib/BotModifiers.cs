@@ -1,11 +1,6 @@
-﻿using RuriLib;
-using PluginFramework;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using PluginFramework;
 using PluginFramework.Attributes;
 using RuriLib.Interfaces;
-using RuriLib.Runner;
 
 namespace Anomaly
 {
@@ -18,12 +13,12 @@ namespace Anomaly
 
         [Checkbox("Disable Wordlist Requirement")]
         public bool RequireWordlist { get; set; } = false;
+
         [Button("Set Changes")]
         public void Execute(IApplication app)
         {
             if (RequireWordlist)
             {
-                
             }
         }
     }
