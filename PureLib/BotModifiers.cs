@@ -11,7 +11,7 @@ namespace Anomaly
         [TextMulti("Explanation")]
         public string[] How_To_Use { get; set; } = new string[] { "These Changes Alter how the Bots Work inside of OpenBullet.", "To Enable a feature Tick the box" };
 
-        [Checkbox("Disable Wordlist Requirement")]
+        [Checkbox("Disable Wordlist Requirement (Not Functional ATM.)")]
         public bool RequireWordlist { get; set; } = false;
 
         [Button("Set Changes")]
