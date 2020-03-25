@@ -28,7 +28,7 @@ namespace Anomaly
                         File.Move(CurFile, NewName);
                     }
                 }
-                app.Logger.Log($"renamed Config Extensions", LogLevel.Info, false);
+                app.Logger.Log($"Renamed Config Extensions", LogLevel.Info, false);
             }
             catch (Exception ex) { app.Logger.Log($"An Error Occured While trying to rename files: {ex}", LogLevel.Error, true); }
         }
@@ -39,6 +39,7 @@ namespace Anomaly
             try
             {
                 HttpClient Http = new HttpClient();
+                Http.Timeout = TimeSpan.FromSeconds(15);
                 var response = await Http.GetAsync(Anomaly.Globals.HttpProxyUrl);
                 var content = await response.Content.ReadAsStringAsync();
                 List<CProxy> list = new List<CProxy>();
@@ -64,6 +65,7 @@ namespace Anomaly
             try
             {
                 HttpClient Http = new HttpClient();
+                Http.Timeout = TimeSpan.FromSeconds(15);
                 var response = await Http.GetAsync(Anomaly.Globals.Socks4ProxyUrl);
                 var content = await response.Content.ReadAsStringAsync();
                 List<CProxy> list = new List<CProxy>();
@@ -89,6 +91,7 @@ namespace Anomaly
             try
             {
                 HttpClient Http = new HttpClient();
+                Http.Timeout = TimeSpan.FromSeconds(15);
                 var response = await Http.GetAsync(Anomaly.Globals.Socks5ProxyUrl);
                 var content = await response.Content.ReadAsStringAsync();
                 List<CProxy> list = new List<CProxy>();

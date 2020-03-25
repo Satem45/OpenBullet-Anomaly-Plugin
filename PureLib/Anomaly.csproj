@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Configurations>Debug;Release;ProperBuild</Configurations>
   </PropertyGroup>
 
   <ItemGroup>
@@ -23,14 +24,17 @@
     <Reference Include="RuriLib">
       <HintPath>..\References\RuriLib.dll</HintPath>
     </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\References\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
   </ItemGroup>
-
+  
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
-  </ItemGroup>
+  
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="$(SolutionDir)Script\PostBuild.bat" />
+  </Target>
 
 </Project>

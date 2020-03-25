@@ -1,0 +1,16 @@
+C:\Users\codys\source\repos\PureLib\PureLib\bin\ProperBuild\netstandard2.0\Anomaly.deps.json
+C:\Users\codys\source\repos\PureLib\PureLib\bin\ProperBuild\netstandard2.0\Anomaly.dll
+C:\Users\codys\source\repos\PureLib\PureLib\bin\ProperBuild\netstandard2.0\Anomaly.pdb
+C:\Users\codys\source\repos\PureLib\PureLib\bin\ProperBuild\netstandard2.0\Extreme.Net.dll
+C:\Users\codys\source\repos\PureLib\PureLib\bin\ProperBuild\netstandard2.0\MegaApiClient.dll
+C:\Users\codys\source\repos\PureLib\PureLib\bin\ProperBuild\netstandard2.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\codys\source\repos\PureLib\PureLib\bin\ProperBuild\netstandard2.0\Newtonsoft.Json.dll
+C:\Users\codys\source\repos\PureLib\PureLib\bin\ProperBuild\netstandard2.0\PluginFramework.dll
+C:\Users\codys\source\repos\PureLib\PureLib\bin\ProperBuild\netstandard2.0\RuriLib.dll
+C:\Users\codys\source\repos\PureLib\PureLib\bin\ProperBuild\netstandard2.0\System.Net.Http.Formatting.dll
+C:\Users\codys\source\repos\PureLib\PureLib\obj\ProperBuild\netstandard2.0\Anomaly.csproj.CoreCompileInputs.cache
+C:\Users\codys\source\repos\PureLib\PureLib\obj\ProperBuild\netstandard2.0\Anomaly.AssemblyInfoInputs.cache
+C:\Users\codys\source\repos\PureLib\PureLib\obj\ProperBuild\netstandard2.0\Anomaly.AssemblyInfo.cs
+C:\Users\codys\source\repos\PureLib\PureLib\obj\ProperBuild\netstandard2.0\Anomaly.csproj.CopyComplete
+C:\Users\codys\source\repos\PureLib\PureLib\obj\ProperBuild\netstandard2.0\Anomaly.dll
+C:\Users\codys\source\repos\PureLib\PureLib\obj\ProperBuild\netstandard2.0\Anomaly.pdb
