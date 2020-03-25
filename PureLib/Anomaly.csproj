@@ -32,9 +32,5 @@
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
-
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="$(SolutionDir)PostBuild.bat" />
-  </Target>
-
+  
 </Project>

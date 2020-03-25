@@ -69,8 +69,8 @@ namespace Anomaly
                 //This will get the latest Release DLL From Github
                 var client2 = new System.Net.WebClient();
                 //This will save with the extension
-                client2.DownloadFile(Anomaly.Globals.LatestDownload, $@".\Plugins\Anomaly-{ParseAPI.TagName.Trim()}.dll");
-                app.Logger.Log("Successfully Updated.", LogLevel.Info, true);
+                client2.DownloadFile(Anomaly.Globals.LatestDownload, $@".\Plugins\Anomaly-{ParseAPI.TagName.Trim()}.zip");
+                app.Logger.Log("Downloaded Update. Please Unzip and Restart OB.", LogLevel.Info, true);
             }
             catch (Exception ex) { app.Logger.Log($"Error Collecting ID Or Saving. ex:{ex}", LogLevel.Error, true); }
         }
