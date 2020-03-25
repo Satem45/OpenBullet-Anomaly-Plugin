@@ -23,3 +23,8 @@ C:\Users\codys\source\repos\PureLib\PureLib\obj\Debug\netstandard2.0\Anomaly.csp
 C:\Users\codys\source\repos\PureLib\PureLib\bin\Debug\netstandard2.0\Anomaly.pdb
 C:\Users\codys\source\repos\PureLib\PureLib\obj\Debug\netstandard2.0\Anomaly.dll
 C:\Users\codys\source\repos\PureLib\PureLib\obj\Debug\netstandard2.0\Anomaly.pdb
+C:\Users\codys\source\repos\PureLib\PureLib\bin\Debug\netstandard2.0\MegaApiClient.dll
+C:\Users\codys\source\repos\PureLib\PureLib\bin\Debug\netstandard2.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\codys\source\repos\PureLib\PureLib\bin\Debug\netstandard2.0\Newtonsoft.Json.dll
+C:\Users\codys\source\repos\PureLib\PureLib\bin\Debug\netstandard2.0\System.Net.Http.Formatting.dll
+C:\Users\codys\source\repos\PureLib\PureLib\obj\Debug\netstandard2.0\Anomaly.csproj.CoreCompileInputs.cache
