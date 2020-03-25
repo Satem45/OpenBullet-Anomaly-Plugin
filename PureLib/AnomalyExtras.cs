@@ -2,8 +2,11 @@
 using PluginFramework.Attributes;
 using RuriLib;
 using RuriLib.Interfaces;
+using RuriLib.Models;
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Net.Http;
 
 namespace Anomaly
 {
@@ -28,6 +31,81 @@ namespace Anomaly
                 app.Logger.Log($"renamed Config Extensions", LogLevel.Info, false);
             }
             catch (Exception ex) { app.Logger.Log($"An Error Occured While trying to rename files: {ex}", LogLevel.Error, true); }
+        }
+
+        [Button("Scrape HTTP Proxies")]
+        public async System.Threading.Tasks.Task ScrapeHTTPAsync(IApplication app)
+        {
+            try
+            {
+                HttpClient Http = new HttpClient();
+                var response = await Http.GetAsync(Anomaly.Globals.HttpProxyUrl);
+                var content = await response.Content.ReadAsStringAsync();
+                List<CProxy> list = new List<CProxy>();
+                string[] Proxies = content.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                foreach (var line in Proxies)
+                {
+                    list.Add(new CProxy
+                    {
+                        Proxy = line,
+                        Type = Extreme.Net.ProxyType.Http
+                    });
+                }
+                app.ProxyManager.AddRange(list);
+                app.Logger.Log(string.Format("{0} proxies have been added to your proxy manager!", list.Count), 0, true, 0);
+            }
+            catch (Exception ex)
+            { app.Logger.Log($"Error Adding proxies ex:{ex}", LogLevel.Error, false); }
+        }
+
+        [Button("Scrape Socks4 Proxies")]
+        public async System.Threading.Tasks.Task ScrapeSocks4Proxies(IApplication app)
+        {
+            try
+            {
+                HttpClient Http = new HttpClient();
+                var response = await Http.GetAsync(Anomaly.Globals.Socks4ProxyUrl);
+                var content = await response.Content.ReadAsStringAsync();
+                List<CProxy> list = new List<CProxy>();
+                string[] Proxies = content.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                foreach (var line in Proxies)
+                {
+                    list.Add(new CProxy
+                    {
+                        Proxy = line,
+                        Type = Extreme.Net.ProxyType.Socks4
+                    });
+                }
+                app.ProxyManager.AddRange(list);
+                app.Logger.Log(string.Format("{0} proxies have been added to your proxy manager!", list.Count), 0, true, 0);
+            }
+            catch (Exception ex)
+            { app.Logger.Log($"Error Adding proxies ex:{ex}", LogLevel.Error, false); }
+        }
+
+        [Button("Scrape Socks5 Proxies")]
+        public async System.Threading.Tasks.Task ScrapeSocks5Proxies(IApplication app)
+        {
+            try
+            {
+                HttpClient Http = new HttpClient();
+                var response = await Http.GetAsync(Anomaly.Globals.Socks5ProxyUrl);
+                var content = await response.Content.ReadAsStringAsync();
+                List<CProxy> list = new List<CProxy>();
+                string[] Proxies = content.Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+                foreach (var line in Proxies)
+                {
+                    list.Add(new CProxy
+                    {
+                        Proxy = line,
+                        Type = Extreme.Net.ProxyType.Socks5
+                    });
+                }
+                app.ProxyManager.AddRange(list);
+                app.Logger.Log(string.Format("{0} proxies have been added to your proxy manager!", list.Count), 0, true, 0);
+            }
+            catch (Exception ex)
+            { app.Logger.Log($"Error Adding proxies ex:{ex}", LogLevel.Error, false); }
         }
     }
 }

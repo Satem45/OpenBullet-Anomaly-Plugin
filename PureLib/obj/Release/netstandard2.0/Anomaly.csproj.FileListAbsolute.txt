@@ -12,3 +12,4 @@ C:\Users\codys\source\repos\PureLib\PureLib\obj\Release\netstandard2.0\Anomaly.A
 C:\Users\codys\source\repos\PureLib\PureLib\obj\Release\netstandard2.0\Anomaly.csproj.CopyComplete
 C:\Users\codys\source\repos\PureLib\PureLib\obj\Release\netstandard2.0\Anomaly.dll
 C:\Users\codys\source\repos\PureLib\PureLib\obj\Release\netstandard2.0\Anomaly.pdb
+C:\Users\codys\source\repos\PureLib\PureLib\obj\Release\netstandard2.0\Anomaly.csproj.CoreCompileInputs.cache

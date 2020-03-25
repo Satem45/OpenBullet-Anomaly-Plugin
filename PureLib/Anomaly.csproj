@@ -5,6 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="Extreme.Net">
+      <HintPath>..\References\Extreme.Net.dll</HintPath>
+    </Reference>
     <Reference Include="MegaApiClient">
       <HintPath>..\References\MegaApiClient.dll</HintPath>
     </Reference>
