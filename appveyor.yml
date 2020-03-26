@@ -6,8 +6,7 @@ before_build:
 
 - ps: dotnet restore
 
-before_build:
-  - ps: ${env:REV} = (git rev-list --count HEAD)
+ - ps: ${env:REV} = (git rev-list --count HEAD)
 
 build:
 
