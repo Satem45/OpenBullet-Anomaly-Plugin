@@ -1,3 +1,5 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/9k464uhwwqy2d10u?svg=true&passingText=master%20-%20OK)](https://ci.appveyor.com/project/PurityWasHere/openbullet-anomaly-plugin)
+
 **OpenBullet Anomaly Plugin**
 
 A Plugin version of OpenBullet Anomaly Hopefully containing all of the standalone features.. And More!
