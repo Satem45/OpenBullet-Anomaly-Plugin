@@ -38,6 +38,7 @@ deploy:
     tag: 0.04#$(REV)
     force_update: true
     auth_token:
-        secure: 6ce1690e584036d8b3824009162e13b485a9d7f1
+        secure: TbastSeqGTUtMYIAaTAvgyqXy53e70/LtRo498y3nxT+y+4wKzpprKebF89JOR5B
+
     on:
       branch: master
