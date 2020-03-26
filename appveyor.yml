@@ -6,8 +6,6 @@ before_build:
 
 - ps: dotnet restore
 
- - ps: ${env:REV} = (git rev-list --count HEAD)
-
 build:
 
   verbosity: minimal
