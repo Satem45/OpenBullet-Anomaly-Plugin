@@ -25,7 +25,7 @@ namespace Anomaly
         {
             try
             {
-                StreamWriter sw = new StreamWriter($@".\Plugins\AnomalySettings.json");
+                StreamWriter sw = new StreamWriter($@".\Plugins\AnomalySettings.json");             
                 sw.WriteLine("Test");
                 sw.Close();
             }

@@ -5,6 +5,11 @@ VisualStudioVersion = 16.0.29905.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Anomaly", "PureLib\Anomaly.csproj", "{03C90131-6455-4A50-94D7-E8C7CEE8B491}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{10C2CD04-8338-4C5B-8BD2-E75868EF7390}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Desktop\appveyor.yml = ..\..\..\Desktop\appveyor.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

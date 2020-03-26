@@ -1,0 +1,46 @@
+version: 0.04#{build}
+configuration: Release
+skip_tags: true
+
+before_build:
+
+- ps: dotnet restore
+
+before_build:
+  - ps: ${env:REV} = (git rev-list --count HEAD)
+
+build:
+
+  verbosity: minimal
+
+after_build:
+
+- cmd: >-
+
+    md C:\projects\openbullet-anomaly-plugin\PureLib\bin\Release\netstandard2.0\Anomaly
+
+
+
+    move C:\projects\openbullet-anomaly-plugin\PureLib\bin\Release\netstandard2.0\*.* C:\projects\openbullet-anomaly-plugin\PureLib\bin\Release\netstandard2.0\Anomaly
+
+
+
+    move C:\projects\openbullet-anomaly-plugin\PureLib\bin\Release\netstandard2.0\Anomaly\Anomaly.dll C:\projects\openbullet-anomaly-plugin\PureLib\bin\Release\netstandard2.0\
+
+
+
+    7z a Anomaly.zip C:\projects\openbullet-anomaly-plugin\PureLib\bin\Release\netstandard2.0\
+
+artifacts:
+- path: Anomaly.zip
+  name: Anomaly
+
+deploy:  
+  - provider: GitHub
+    artifact: /.*\.zip/
+    tag: 0.04#$(REV)
+    force_update: true
+    auth_token:
+        secure: 6ce1690e584036d8b3824009162e13b485a9d7f1
+    on:
+      branch: master
