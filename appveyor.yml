@@ -24,9 +24,9 @@ after_build:
 
     move C:\projects\openbullet-anomaly-plugin\PureLib\bin\Release\netstandard2.0\Anomaly\Anomaly.dll C:\projects\openbullet-anomaly-plugin\PureLib\bin\Release\netstandard2.0\
 
+    cd C:\projects\openbullet-anomaly-plugin\PureLib\bin\Release\netstandard2.0\Anomaly\
 
-
-    7z a Anomaly.zip C:\projects\openbullet-anomaly-plugin\PureLib\bin\Release\netstandard2.0\
+    7z a Anomaly.zip C:\projects\openbullet-anomaly-plugin\PureLib\bin\Release\netstandard2.0\Anomaly
 
 artifacts:
 - path: Anomaly.zip
