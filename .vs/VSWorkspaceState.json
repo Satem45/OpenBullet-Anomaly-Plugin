@@ -1,6 +1,8 @@
 {
   "ExpandedNodes": [
-    "\\PureLib\\bin\\Release\\netstandard2.0"
+    "",
+    "\\PureLib"
   ],
+  "SelectedNode": "\\PureLib\\Globals.cs",
   "PreviewInSolutionExplorer": false
 }
