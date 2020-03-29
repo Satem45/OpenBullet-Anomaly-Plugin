@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\codys\\source\\repos\\PureLib\\PureLib\\Anomaly.csproj": {}
+    "C:\\Users\\codys\\Source\\Repos\\OpenBullet-Anomaly-Plugin\\PureLib\\Anomaly.csproj": {}
   },
   "projects": {
-    "C:\\Users\\codys\\source\\repos\\PureLib\\PureLib\\Anomaly.csproj": {
+    "C:\\Users\\codys\\Source\\Repos\\OpenBullet-Anomaly-Plugin\\PureLib\\Anomaly.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\codys\\source\\repos\\PureLib\\PureLib\\Anomaly.csproj",
+        "projectUniqueName": "C:\\Users\\codys\\Source\\Repos\\OpenBullet-Anomaly-Plugin\\PureLib\\Anomaly.csproj",
         "projectName": "Anomaly",
-        "projectPath": "C:\\Users\\codys\\source\\repos\\PureLib\\PureLib\\Anomaly.csproj",
+        "projectPath": "C:\\Users\\codys\\Source\\Repos\\OpenBullet-Anomaly-Plugin\\PureLib\\Anomaly.csproj",
         "packagesPath": "C:\\Users\\codys\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\codys\\source\\repos\\PureLib\\PureLib\\obj\\",
+        "outputPath": "C:\\Users\\codys\\Source\\Repos\\OpenBullet-Anomaly-Plugin\\PureLib\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\codys\\AppData\\Roaming\\NuGet\\NuGet.Config",

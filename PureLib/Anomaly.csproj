@@ -6,6 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="DotNetApiGatewayIam">
+      <HintPath>..\References\DotNetApiGatewayIam.dll</HintPath>
+    </Reference>
     <Reference Include="Extreme.Net">
       <HintPath>..\References\Extreme.Net.dll</HintPath>
     </Reference>
