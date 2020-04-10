@@ -11,5 +11,7 @@
         public static string HttpProxyUrl { get; set; } = "https://api.proxyscrape.com/?request=getproxies&proxytype=http&timeout=10000&country=all&ssl=all&anonymity=all";
         public static string Socks4ProxyUrl { get; set; } = "https://api.proxyscrape.com/?request=getproxies&proxytype=socks4&timeout=10000&country=all";
         public static string Socks5ProxyUrl { get; set; } = "https://api.proxyscrape.com/?request=getproxies&proxytype=socks5&timeout=10000&country=all";
+        public static string EnvironmentPath {get;set;} = ($@".\Settings\Environment.ini");
+        public static string EnvironmentURL {get;set;} = "https://raw.githubusercontent.com/PurityWasHere/OpenBullet-Anomaly-Plugin/master/Environment.ini";
     }
 }

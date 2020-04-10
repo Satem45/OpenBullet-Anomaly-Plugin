@@ -6,6 +6,8 @@ using RuriLib.LS;
 using System;
 using System.Net.Http;
 using System.Net;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Anomaly
 {
@@ -21,23 +23,14 @@ namespace Anomaly
         [Text("AccessKey", "AWS Access Key")]
         public string AccessKey { get; set; } = "";
 
-        [Text("Secret AccessKey", "AWS Secret key / Token")]
-        public string SecretAccessKey { get; set; } = "";
-
-        [Text("API Endpoint", "API Endpoint")]
-        public string AWSUrl { get; set; } = "";
-
-        [Text("AWS Endpoint Stages", "API Endpoint Stages")]
-        public string AWSStages { get; set; } = "";
+        [Text("AWSService", "API Endpoint Stages")]
+        public string AWSService { get; set; } = "";
 
         [Text("RegionName", "API Region")]
         public string RegionName { get; set; } = "";
 
-        [Text("JsonData", "Json Post data")]
-        public string JsonData { get; set; } = "";
-
-        [Text("SessionToken", "Session Token")]
-        public string SessionToken { get; set; } = "";
+        [Text("AWSDateStamp", "Session Token")]
+        public string AWSDateStamp { get; set; } = "";
 
         [Checkbox("Is Capture", "Should the output variable be marked as capture?")]
         public bool IsCapture { get; set; } = false;
@@ -53,13 +46,10 @@ namespace Anomaly
             if (input.StartsWith("#")) // If the input actually has a label
                 Label = LineParser.ParseLabel(ref input); // Parse the label and remove it from the original string
                 VariableName = LineParser.ParseLiteral(ref input, "Variable Name");
-                AccessKey = LineParser.ParseLiteral(ref input, "AcessKey");
-                SecretAccessKey = LineParser.ParseLiteral(ref input, "SecretAccessKey");
-                AWSUrl = LineParser.ParseLiteral(ref input, "AWSURL");
+                AccessKey = LineParser.ParseLiteral(ref input, "AcessKey");              
                 RegionName = LineParser.ParseLiteral(ref input, "AWS Region Name");
-                JsonData = LineParser.ParseLiteral(ref input, "AWS Json Data");
-                AWSStages = LineParser.ParseLiteral(ref input, "AWS API Stages");
-                SessionToken = LineParser.ParseLiteral(ref input, "AWS Session token");
+                AWSService = LineParser.ParseLiteral(ref input, "AWS API Stages");
+                AWSDateStamp = LineParser.ParseLiteral(ref input, "AWS Session token");
             if (LineParser.ParseToken(ref input, TokenType.Arrow, false) == "")
                 return this;
             try
@@ -81,12 +71,9 @@ namespace Anomaly
                 .Token(Name) // Write the block name. This cannot be changed.
                 .Literal(VariableName)
                 .Literal(AccessKey)
-                .Literal(SecretAccessKey)
-                .Literal(AWSUrl)
                 .Literal(RegionName)
-                .Literal(JsonData)
-                .Literal(AWSStages)
-                .Literal(SessionToken);
+                .Literal(AWSService)
+                .Literal(AWSDateStamp);
             if (!writer.CheckDefault(VariableName, nameof(VariableName)))
             {
                 writer
@@ -97,26 +84,33 @@ namespace Anomaly
             return writer.ToString();
         }
 
+        static byte[] HmacSHA256(String data, byte[] key)
+        {
+            String algorithm = "HmacSHA256";
+            KeyedHashAlgorithm kha = KeyedHashAlgorithm.Create(algorithm);
+            kha.Key = key;
 
-        public override async void Process(BotData data)
+            return kha.ComputeHash(Encoding.UTF8.GetBytes(data));
+        }
+
+        static byte[] getSignatureKey(String key, String dateStamp, String regionName, String serviceName)
+        {
+            byte[] kSecret = Encoding.UTF8.GetBytes(("AWS4" + key).ToCharArray());
+            byte[] kDate = HmacSHA256(dateStamp, kSecret);
+            byte[] kRegion = HmacSHA256(regionName, kDate);
+            byte[] kService = HmacSHA256(serviceName, kRegion);
+            byte[] kSigning = HmacSHA256("aws4_request", kService);
+
+            var result = kSigning;
+            return kSigning;
+        }
+
+        public override void Process(BotData data)
         {
             // Magick Stuff goin on
             try
             {
-                var request = new DotNetApiGatewayIam.AwsApiGatewayRequest()
-                {
-                    RegionName = RegionName,
-                    Host = AWSUrl,
-                    AccessKey = AccessKey,
-                    SecretKey = SecretAccessKey,
-                    AbsolutePath = AWSStages,
-                    JsonData = JsonData,
-                    SessionToken = SessionToken,
-                    RequestMethod = HttpMethod.Post
-                };
-                var apiRequest = new ApiRequest(request);
-                var response = await apiRequest.GetResponseStringAsync();
-                var result = response.ToString();
+                var result = Encoding.UTF8.GetString(getSignatureKey(AccessKey, AWSDateStamp, RegionName, AWSService));
                 InsertVariable(data, IsCapture, result, VariableName, "", "", false, false);
                 data.Status = RuriLib.BotStatus.SUCCESS;
                 data.Log($"Generated AWS Token with result {result}");

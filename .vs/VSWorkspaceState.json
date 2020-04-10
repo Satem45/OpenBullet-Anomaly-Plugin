@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\PureLib",
     "\\References"
   ],
-  "SelectedNode": "\\Anom-Plugin.sln",
+  "SelectedNode": "\\PureLib\\AWSSignature.cs",
   "PreviewInSolutionExplorer": false
 }

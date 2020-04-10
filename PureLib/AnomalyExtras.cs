@@ -110,5 +110,17 @@ namespace Anomaly
             catch (Exception ex)
             { app.Logger.Log($"Error Adding proxies ex:{ex}", LogLevel.Error, false); }
         }
+
+        [Button("Patch Environment File (Requires Restart)")]
+        public void PatchEnvironment(IApplication app)
+        {
+            try
+            {
+                var client = new System.Net.WebClient();
+                client.DownloadFile(Anomaly.Globals.EnvironmentURL, Anomaly.Globals.EnvironmentPath);
+                app.Logger.Log("Installed new Environment.ini, Please Restart.", LogLevel.Info, true);
+            }
+            catch (Exception ex) {app.Logger.Log($"Failed Installing new Environment.ini ex:{ex}", LogLevel.Error, true); }
+        }
     }
 }
